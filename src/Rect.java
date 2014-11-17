@@ -1,21 +1,18 @@
-
 import TurtleGraphics.Pen;
 
-public class Rect implements Shape {
+public class Rect extends AbstractShape {
     
-    private double xpos, ypos, width, length;
+    private double width, length;
     
     public Rect(){
-    xpos=0;
-    ypos=0;
-    width=1;
-    length=1;
+        super();
+        width=1;
+        length=1;
     }
     
-    public Rect(double x, double y, double w, double l)
+    public Rect(double xloc, double yloc, double w, double l)
     {
-        xpos= x;
-        ypos= y;
+        super();
         width= w;
         length= l;
     }
@@ -39,33 +36,19 @@ public class Rect implements Shape {
         p.move(length);
     }
 
-   
-    public double xpos() {
-       return xpos;
-    }
-
-  
-    public double ypos() {
-        return ypos;
-    }
-
-    
-    public void wave(double xloc, double yloc) {
-         xpos= xloc;
-         ypos= yloc;
-    }
-
     
     public void stretchyBy(double factor) {
        length*=factor;
        width*=factor;
     }
     public String toString(){
-        String str = "This is a RECTANGLE\n";
-        str+="XLOC: " + xpos + "\tYLOC: " + ypos + "\n";
-        str+="Width: " + width + "\nHeight: " + length + "\n";
-        str+="Area: " + area();
-        return str;
+    String str = "RECTANGLE\n" + "Width: " + width + "\nHeight: " + length
+    + "\n(X,Y) Position: (" + xpos + "," + ypos + ")\nArea: " + area()
+    + "Perimeter: " + perimeter();
+    return str;
+}
+
+public double perimeter(){
+    return width*2+length*2;
     }
-    
 }

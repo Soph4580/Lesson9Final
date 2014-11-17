@@ -1,19 +1,17 @@
-import TurtleGraphics.*;
+import TurtleGraphics.Pen;
 
-public class Circle implements Shape {
+public class Circle extends AbstractShape {
 
-     private double xpos, ypos, radius;
-   
+    protected double radius;
+    
     public Circle(){
-    xpos=0;
-    ypos=0;
-    radius=1;
+        super();
+        radius=1;
     }
     
-    public Circle(double x, double y, double r)
+    public Circle(double xloc, double yloc, double r)
     {
-        xpos=x;
-        ypos=y;
+        super(xloc, yloc);
         radius=r;
     }
      
@@ -36,31 +34,18 @@ public class Circle implements Shape {
         }
     }
 
-    
-    public double xpos() {
-        return xpos;
-    }
-
-    
-    public double ypos() {
-      return ypos;
-    }
-
-    
-    public void wave(double xloc, double yloc) {
-          xpos= xloc;
-            ypos= yloc;
-    }
 
     public void stretchyBy(double factor) {
        radius*=factor;
     }
     public String toString(){
-        String str = "This is a CIRCLE\n";
-        str+="XLOC: " + xpos + "\tYLOC: " + ypos + "\n";
-        str+="Radius: " + radius + "\n";
-        str+="Area: " + area();
+    String str = "CIRCLE\n"+"Radius: " + radius + "\n"
+    + "(X,Y) Position: (" + xpos + "," + ypos + ")\n"
+    + "Area: " + area();
         return str;
+}
+
+public double perimeter(){
+    return 2*Math.PI*radius;
     }
-    
 }
