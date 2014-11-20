@@ -5,7 +5,7 @@ public interface Shape {
     public void draw(Pen p);
     public double xpos();
     public double ypos();
-    public void wave(double xloc, double yloc);
+    public void move(double xloc, double yloc);
     public void stretchyBy(double factor);
     public String toString();
     

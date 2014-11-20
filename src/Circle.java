@@ -35,7 +35,7 @@ public class Circle extends AbstractShape {
     }
 
 
-    public void stretchyBy(double factor) {
+    public void stretchBy(double factor) {
        radius*=factor;
     }
     public String toString(){

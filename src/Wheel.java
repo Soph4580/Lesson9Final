@@ -1,11 +1,11 @@
 import TurtleGraphics.Pen;
 
-public class Wheel {
+public class Wheel extends Circle {
     private int spokes;
 
     public Wheel(){
     super();
-    spokes=0;
+    spokes=0;//Activates constructor
     }
 
 public Wheel(double xloc,double yloc,double r,int s){

@@ -18,12 +18,12 @@ public class ShapeMaker {
       System.out.println("\nRectangle Area: " + rect.area() + "\nCircle Area: " + shape1.area() + "\nRectangle Area: " + shape2.area() + "\nWheel Area: " + shape3.area());
       }
     
-    static private ShapeMaker makeOneShapeFromAnother (Shape inShape, String type){
+    static private Shape makeOneShapeFromAnother (Shape inShape, String type){
         Shape outShape;
         //Declare outShape
         double area, radius, width, length;
-        double x = inShape.getxpos();
-        double y = inShape.getypos();
+        double x = inShape.xpos();
+        double y = inShape.ypos();
         
         area = inShape.area();
         if(type.equals("Circle")){
@@ -33,12 +33,16 @@ public class ShapeMaker {
         }
         else if (type.equals("Rectangle")){
             width = length = Math.sqrt(area);
-            outShape = new Rect (x, y, radius, 6);
+            outShape = new Rect (x, y, width, length);
             
             //Assign a wheel
         }
-         return outShape;   
+        else{
+             radius = Math.sqrt(area/ Math.PI);
+            outShape = new Wheel (x, y, radius, 6);
         }
+         return outShape;   
+        
         
     } 
     

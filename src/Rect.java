@@ -37,7 +37,7 @@ public class Rect extends AbstractShape {
     }
 
     
-    public void stretchyBy(double factor) {
+    public void stretchBy(double factor) {
        length*=factor;
        width*=factor;
     }
