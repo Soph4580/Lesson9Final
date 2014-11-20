@@ -22,8 +22,8 @@ public class ShapeMaker {
         Shape outShape;
         //Declare outShape
         double area, radius, width, length;
-        double x = inShape.xpos();
-        double y = inShape.ypos();
+        double x = inShape.getxpos();
+        double y = inShape.getypos();
         
         area = inShape.area();
         if(type.equals("Circle")){

@@ -26,6 +26,12 @@ public class ShapesGUI extends javax.swing.JFrame {
         s.draw(p);
         txtinfo.setText(s.toString());
     }
+    private void WheelbtnActionPerformed(java.awt.event.ActionEvent evt){
+        erase();
+        s=new Wheel (0,0,50,6);
+        s.draw(p);
+        txtinfo.setText(s.toString());
+    }
   
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
