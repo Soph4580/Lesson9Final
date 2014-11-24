@@ -3,7 +3,12 @@ import TurtleGraphics.Pen;
 public class Triangle extends AbstractShape {
     
     private double xpos2, xpos3, ypos2, ypos3;
+    
+    public Triangle(){
+        super();
+    }
    
+    @Override
     public double area() {
        
     }
@@ -12,7 +17,7 @@ public class Triangle extends AbstractShape {
        
     }
 
-   
+    
     public void stretchBy(double factor) {
         
     }
