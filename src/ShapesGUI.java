@@ -20,18 +20,7 @@ public class ShapesGUI extends javax.swing.JFrame {
         s.draw(p);
         p.setColor(Color.blue);}
     
-    private void CirclebtnActionPerformed(java.awt.event.ActionEvent evt){
-        erase();
-        s=new Circle (0,0,50);
-        s.draw(p);
-        txtinfo.setText(s.toString());
-    }
-    private void WheelbtnActionPerformed(java.awt.event.ActionEvent evt){
-        erase();
-        s=new Wheel (0,0,50,6);
-        s.draw(p);
-        txtinfo.setText(s.toString());
-    }
+
   
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
@@ -57,12 +46,32 @@ public class ShapesGUI extends javax.swing.JFrame {
         jPanel1.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
         Circlebtn.setText("Circle");
+        Circlebtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                CirclebtnActionPerformed(evt);
+            }
+        });
 
         Wheelbtn.setText("Wheel");
+        Wheelbtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                WheelbtnActionPerformed(evt);
+            }
+        });
 
         Rectanglebtn.setText("Rectangle");
+        Rectanglebtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                RectanglebtnActionPerformed(evt);
+            }
+        });
 
         Trianglebtn.setText("Triangle");
+        Trianglebtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                TrianglebtnActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -97,10 +106,25 @@ public class ShapesGUI extends javax.swing.JFrame {
         jPanel2.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
         Movebtn.setText("Move");
+        Movebtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                MovebtnActionPerformed(evt);
+            }
+        });
 
         Resizebtn.setText("Resize");
+        Resizebtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ResizebtnActionPerformed(evt);
+            }
+        });
 
         Quitbtn.setText("Quit");
+        Quitbtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                QuitbtnActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -175,6 +199,55 @@ public class ShapesGUI extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void RectanglebtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RectanglebtnActionPerformed
+        erase();
+        s = new Rect(0,0,50,25);
+        s.draw(p);
+        txtinfo.setText(s.toString());
+    }//GEN-LAST:event_RectanglebtnActionPerformed
+
+    private void CirclebtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CirclebtnActionPerformed
+        erase();
+        s=new Circle (0,0,50);
+        s.draw(p);
+        txtinfo.setText(s.toString());
+    }//GEN-LAST:event_CirclebtnActionPerformed
+
+    private void WheelbtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_WheelbtnActionPerformed
+        erase();
+        s=new Wheel (0,0,50,6);
+        s.draw(p);
+        txtinfo.setText(s.toString());
+    }//GEN-LAST:event_WheelbtnActionPerformed
+
+    private void TrianglebtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TrianglebtnActionPerformed
+        erase();
+        s = new Triangle();
+        s.draw(p);
+        txtinfo.setText(s.toString());
+    }//GEN-LAST:event_TrianglebtnActionPerformed
+
+    private void MovebtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MovebtnActionPerformed
+        double x = Double.parseDouble(JOptionPane.showInputDialog(this, "Enter new x value", "0"));
+        double y = Double.parseDouble(JOptionPane.showInputDialog(this, "Enter new y value", "0"));
+        erase();
+        s.move(x,y);
+        s.draw(p);
+        txtinfo.setText(s.toString());
+    }//GEN-LAST:event_MovebtnActionPerformed
+
+    private void ResizebtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ResizebtnActionPerformed
+        double k = Double.parseDouble(JOptionPane.showInputDialog(this, "Enter a new stretch factor", "0"));
+        erase();
+        s.stretchBy(k);
+        s.draw(p);
+        txtinfo.setText(s.toString());
+    }//GEN-LAST:event_ResizebtnActionPerformed
+
+    private void QuitbtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_QuitbtnActionPerformed
+        this.dispose();
+    }//GEN-LAST:event_QuitbtnActionPerformed
 
    
     public static void main(String args[]) {

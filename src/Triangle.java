@@ -15,7 +15,12 @@ public class Triangle extends AbstractShape {
     
     @Override
     public void draw(Pen p) {
-       
+        p.up();
+        p.move(xpos,ypos);
+        p.down();
+        p.move(xpos2,ypos2);
+        p.move(xpos3,ypos3);
+        p.move(xpos,ypos);
     }
     
     @Override
@@ -32,7 +37,7 @@ public class Triangle extends AbstractShape {
 
     @Override
     public String toString() {
-        String str = "Tringle\n";
+        String str = "Triangle\n";
         return str;
     }
 
