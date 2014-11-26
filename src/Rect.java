@@ -43,7 +43,7 @@ public class Rect extends AbstractShape {
     }
     public String toString(){
     String str = "RECTANGLE\n" + "Width: " + width + "\nHeight: " + length
-    + "\n(X,Y) Position: (" + xpos + "," + ypos + ")\nArea: " + area()
+    + "\n(X,Y) Position: (" + xpos + "," + ypos + ")\nArea: " + area() + "\n"
     + "Perimeter: " + perimeter();
     return str;
 }
