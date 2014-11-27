@@ -50,7 +50,10 @@ public class Triangle extends AbstractShape {
 
     
     public String toString() {
-        String str = "Triangle\n" + "(X,Y,Z) Position: (" + xpos + "," + ypos + ")\nArea: " + area()+ "\n" + "Perimeter: " + perimeter();
+        String str = super.toString();
+        str+= "Triangle\n" + "(X,Y,Z) Position: (";
+        str+=  xpos + "," + ypos + "," + xpos2 + "," + ypos2 + "," + xpos3 + "," + ypos3;
+        str+= ")\nArea: " + area()+ "\n" + "Perimeter: " + perimeter();
         return str;
     }
 
