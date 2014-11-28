@@ -1,9 +1,14 @@
 
 public class EmpGUI extends javax.swing.JFrame {
-
+    
+    Employee emp[];
+    int size=0;
+    NumberFormat nf;
     
     public EmpGUI() {
         initComponents();
+        emp = new Employee[10];
+        nf = NumberFormat.getCurrencyInstance();
     }
 
     
