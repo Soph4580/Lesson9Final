@@ -1,4 +1,7 @@
 
+import javax.swing.JOptionPane;
+
+
 public class EmpGUI extends javax.swing.JFrame {
     
     Employee emp[];
@@ -199,16 +202,27 @@ public class EmpGUI extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnaddActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnaddActionPerformed
-        // TODO add your handling code here:
-       String choice = buttonGroup1.getSelection().getActionCommand();
-       //Put choice in table
-       tblemployee.setValueAt(choice, 0, 1);
-       tblemployee.setValueAt("You Chose ", 0, 0);
+        Employee temp;
+        String nm, type;
+        int hours;
+        double rate;
+        try{
+            nm = nametxt.getText();
+            hours = Integer.parseInt(hourstxt.getText());
+            rate = Double.parseDouble(ratetxt.getText());
+            type = buttonGroup1.getSelection().getActionCommand();
+        }catch(Exception e)
+        {
+            JOptionPane.showMessageDialog(this, "You must fill out the form correctly");
+            return;
+        }
+        if(type.equals("FT"))
+            temp = new FullTimeEmployee();
+        else
+            temp = new PartTimeEmployee();
     }//GEN-LAST:event_btnaddActionPerformed
 
-    /**
-     * @param args the command line arguments
-     */
+    
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">

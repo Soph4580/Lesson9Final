@@ -39,7 +39,8 @@ public abstract class Employee {
         
         else{
             name=nm;
-	return true;}
+	return true;
+        }
      }
     
     public boolean setRate(double rt) {
@@ -48,7 +49,8 @@ public abstract class Employee {
         
         if(rateok){
             rate=rt;
-        return true;}
+        return true;
+        }
         
         else return false;}
     
@@ -61,11 +63,13 @@ public abstract class Employee {
             hours=hrs;
 
             return true;}
-            else return false;}
+            else return false;
+    }
     
     public String getName() {
 	
-       return name;}
+       return name;
+    }
 
       
     public abstract double getPay();
