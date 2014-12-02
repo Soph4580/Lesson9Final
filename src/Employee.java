@@ -24,5 +24,50 @@ public abstract class Employee {
         return "Between " + LOW_RATE + " and " + HIGH_RATE + " , inclusive";
     }
     
+    public static String getHoursRules() {
+        return "between " + LOW_HOURS + " and " + HIGH_HOURS + "inclusive";
+    }
+    
+    public static double getTotalPay(){
+        return totalpay;
+    }
+    
+    public boolean setName(String nm) {
+	
+        if (nm.equals(""))
+            return false;
+        
+        else{
+            name=nm;
+	return true;}
+     }
+    
+    public boolean setRate(double rt) {
+    
+        boolean rateok = (rt >=LOW_RATE && rt <=HIGH_RATE);
+        
+        if(rateok){
+            rate=rt;
+        return true;}
+        
+        else return false;}
+    
+    public boolean setHours(int hrs) {
+    
+        boolean hoursok = (hrs>=LOW_HOURS && hrs<=HIGH_HOURS);
+     
+        if (hoursok){
+   
+            hours=hrs;
+
+            return true;}
+            else return false;}
+    
+    public String getName() {
+	
+       return name;}
+
+      
+    public abstract double getPay();
     
 }
