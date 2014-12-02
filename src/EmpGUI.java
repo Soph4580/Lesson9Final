@@ -1,4 +1,3 @@
-
 import javax.swing.JOptionPane;
 
 
@@ -6,12 +5,12 @@ public class EmpGUI extends javax.swing.JFrame {
     
     Employee emp[];
     int size=0;
-    NumberFormat nf;
+    //NumberFormat nf; Having problems with NumberFormat
     
     public EmpGUI() {
         initComponents();
         emp = new Employee[10];
-        nf = NumberFormat.getCurrencyInstance();
+        //nf =NumberFormat.getCurrencyInstance();
     }
 
     
@@ -87,6 +86,11 @@ public class EmpGUI extends javax.swing.JFrame {
         });
 
         btnquit.setText("Quit");
+        btnquit.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnquitActionPerformed(evt);
+            }
+        });
 
         tblemployee.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -220,7 +224,36 @@ public class EmpGUI extends javax.swing.JFrame {
             temp = new FullTimeEmployee();
         else
             temp = new PartTimeEmployee();
+        if(temp.setName(nm) && temp.setHours(hours) && temp.setRate(rate))
+        {
+            emp[size] = temp;
+            tblemployee.setValueAt(temp.getName(), size, 0);
+            tblemployee.setValueAt(nf.format(temp.getPay()), size, 1);
+            size++;
+            lbltotal.setText(nf.format(Employee.getTotalPay()));
+            
+           //clearform(); need help for this
+            
+            if(size == 10){
+                btnadd.setEnabled(false);
+            }
+            return;
+        }
+        else
+        {
+            String error = "ERROR\n==\n";
+            //if(temp.setName(nm)== false)error += "Name: " + Employee.getNameRules() + "\n"; Isn't recognizing getNameRules from Employee
+            
+            if(temp.setHours(hours)==false)error += "Hours: " + Employee.getHoursRules() + "\n";
+            
+            //if(temp.setRate(rate)==false)error += "Rate: " + Employee.getRateRules(); Isn't recognizing getRateRules from Employee
+            
+            JOptionPane.showMessageDialog(this, error);}
     }//GEN-LAST:event_btnaddActionPerformed
+
+    private void btnquitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnquitActionPerformed
+        System.exit(0);
+    }//GEN-LAST:event_btnquitActionPerformed
 
     
     public static void main(String args[]) {
