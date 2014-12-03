@@ -1,16 +1,17 @@
 import javax.swing.JOptionPane;
+import java.text.NumberFormat;
 
 
 public class EmpGUI extends javax.swing.JFrame {
     
     Employee emp[];
     int size=0;
-    //NumberFormat nf; Having problems with NumberFormat
+    NumberFormat nf; 
     
     public EmpGUI() {
         initComponents();
         emp = new Employee[10];
-        //nf =NumberFormat.getCurrencyInstance();
+        nf =NumberFormat.getCurrencyInstance();
     }
 
     
@@ -242,11 +243,12 @@ public class EmpGUI extends javax.swing.JFrame {
         else
         {
             String error = "ERROR\n==\n";
-            //if(temp.setName(nm)== false)error += "Name: " + Employee.getNameRules() + "\n"; Isn't recognizing getNameRules from Employee
+            if(temp.setName(nm)== false)error += "Name: " + Employee.getNameRules() + "\n"; 
             
             if(temp.setHours(hours)==false)error += "Hours: " + Employee.getHoursRules() + "\n";
             
-            //if(temp.setRate(rate)==false)error += "Rate: " + Employee.getRateRules(); Isn't recognizing getRateRules from Employee
+            if(temp.setRate(rate)==false)error += "Rate: " + Employee.getRateRules() + "\n";
+            
             
             JOptionPane.showMessageDialog(this, error);}
     }//GEN-LAST:event_btnaddActionPerformed

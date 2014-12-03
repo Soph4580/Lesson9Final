@@ -16,11 +16,11 @@ public abstract class Employee {
         hours = 0;
     }
     
-    public String getNameRules(){
+    public static String getNameRules(){
         return "nonblank";
     }
     
-    public String getRateRules(){
+    public static String getRateRules(){
         return "Between " + LOW_RATE + " and " + HIGH_RATE + " , inclusive";
     }
     
