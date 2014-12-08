@@ -1,4 +1,4 @@
-import javax.swing.JOptionPane;
+ import javax.swing.JOptionPane;
 import java.text.NumberFormat;
 
 
@@ -52,11 +52,11 @@ public class EmpGUI extends javax.swing.JFrame {
 
         buttonGroup1.add(jRadioButton1);
         jRadioButton1.setText("Part Time");
-        jRadioButton1.setActionCommand("Pt");
+        jRadioButton1.setActionCommand("PT");
 
         buttonGroup1.add(jRadioButton2);
         jRadioButton2.setText("Full Time");
-        jRadioButton2.setActionCommand("Ft");
+        jRadioButton2.setActionCommand("FT");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
